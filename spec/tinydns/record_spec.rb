@@ -10,4 +10,12 @@ describe TinyDNS::Record do
     )
     @record.to_str.should eql("=example.com:1.2.3.4:3600")
   end
+
+  it "types" do
+    TinyDNS::Record.new(:type => '=').type.should eql(:a)
+    TinyDNS::Record.new(:type => 'C').type.should eql(:cname)
+    TinyDNS::Record.new(:type => '@').type.should eql(:mx)
+    TinyDNS::Record.new(:type => '.').type.should eql(:soa)
+    TinyDNS::Record.new(:type => "'").type.should eql(:text)
+  end
 end
