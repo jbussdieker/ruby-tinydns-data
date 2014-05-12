@@ -1,6 +1,6 @@
 # Tinydns::Data
 
-TODO: Write a gem description
+[![Dependency Status](https://gemnasium.com/jbussdieker/ruby-tinydns-data.svg)](https://gemnasium.com/jbussdieker/ruby-tinydns-data)
 
 ## Installation
 
