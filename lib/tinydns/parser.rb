@@ -8,7 +8,7 @@ module TinyDNS
 
     def parse
       @io.split("\n").collect do |line|
-        unless line.strip.start_with? "#"
+        unless line.empty? || line.strip.start_with?("#")
           type = line[0]
           name, value, ttl, other = line[1..-1].split(":")
           record = {:type => type, :name => name, :value => value, :ttl => ttl}
