@@ -34,4 +34,16 @@ describe TinyDNS::Parser do
     )
     @parser.parse.should eq([@record])
   end
+
+  it "blank line" do
+    @parser = TinyDNS::Parser.new("\n@example.com:1.2.3.4:mail.example.com:3600")
+    @record = TinyDNS::Record.new(
+      :type => '@',
+      :name => 'example.com',
+      :value => '1.2.3.4',
+      :ttl => "mail.example.com",
+      :other => "3600"
+    )
+    @parser.parse.should eq([@record])
+  end
 end
